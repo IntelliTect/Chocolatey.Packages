@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>PowerShell</id>
+    <title>Windows Management Framework and PowerShell 3.0 Beta</title>
+    <version>3.0.20120627-Beta</version>
+    <authors>Microsoft wrote PowerShell.  IntelliTect created the Chocolatey Package</authors>
+    <owners>IntelliTect Corporation: Mark Michaelis, Kelly Adams, Zach Moore, Phil Spokas, Ian Davis</owners>
+    <summary>Installs Windows Management Framework and Windows PowerShell 3.0</summary>
+    <description>Windows Management Framework 3.0 makes some updated management functionality available to be installed on Windows 7 SP1, Windows Server 2008 R2 SP1 &amp; Windows Server 2008 SP2. Windows Management Framework 3.0 contains Windows PowerShell 3.0, WMI &amp; WinRM. </description>
+    <projectUrl>http://technet.microsoft.com/en-us/library/hh857339.aspx</projectUrl>
+    <tags>PowerShell admin Reboot</tags>
+    <copyright>2012 IntelliTect Corporation</copyright>
+    <licenseUrl>https://gist.github.com/gists/2841427/download</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>http://www.rssbus.com/ui/img/logo-powershell.png</iconUrl>
+    <!--<dependencies>
+      <dependency id="" version="" />
+    </dependencies>-->
+    <releaseNotes></releaseNotes>
+  </metadata>
+</package>
+
