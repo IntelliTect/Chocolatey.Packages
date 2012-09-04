@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>VisualStudioUltimate2012</id>
+    <title>Microsoft Visual Sudio Ultimate 2012 RC - English</title>
+    <version>11.0.50522.1-RC</version>
+    <authors>Microsoft wrote Visual Studio.  IntelliTect created the Chocolatey Package</authors>
+    <owners>IntelliTect Corporation</owners>
+    <summary>Installs Windows Management Framework and Windows PowerShell 3.0</summary>
+    <description>Visual Studio Ultimate 2012 RC is the comprehensive ALM offering for organizations developing and operating highly scalable software applications and services.</description>
+    <projectUrl>http://www.microsoft.com/visualstudio/11/en-us/downloads#ultimate</projectUrl>
+    <tags>Microsoft VisualStudio admin Reboot .NET</tags>
+    <copyright>2012 IntelliTect Corporation</copyright>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>http://i.microsoft.com/visualstudio/11/images/visual_studio_logo.png</iconUrl>
+    <!--<dependencies>
+      <dependency id="" version="" />
+    </dependencies>-->
+    <releaseNotes>
+    </releaseNotes>
+  </metadata>
+</package>
