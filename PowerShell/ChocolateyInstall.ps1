@@ -3,9 +3,9 @@ try
   [string] $packageName="PowerShell 3.0" 
   [string] $fileType="exe" 
   [string] $silentArgs="/quiet /norestart /log:`"$env:TEMP\PowerShell.v3.log`""
-  [string] $url = "http://download.microsoft.com/download/5/2/B/52B59966-3009-4F39-A99E-3732717BBE2A/Windows6.1-KB2506143-x86.msu"
-  [string] $url64bit = "http://download.microsoft.com/download/5/2/B/52B59966-3009-4F39-A99E-3732717BBE2A/Windows6.1-KB2506143-x64.msu"
-  [string[]] $validExitCodes = @(0, 3010)
+  [string] $url = "http://download.microsoft.com/download/C/C/8/CC87C64D-2D20-4797-8FE6-EAD6651AA944/Windows6.1-KB2506143-x86.msu"
+  [string] $url64bit = "http://download.microsoft.com/download/C/C/8/CC87C64D-2D20-4797-8FE6-EAD6651AA944/Windows6.1-KB2506143-x64.msu"
+  [string[]] $validExitCodes = @(0, 3010) # 2359302 occurs if the package is already installed.
   [string] $wusaExe="wusa.exe"
 
 

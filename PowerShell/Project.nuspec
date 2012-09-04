@@ -2,8 +2,8 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>PowerShell</id>
-    <title>Windows Management Framework and PowerShell 3.0 Beta</title>
-    <version>3.0.20120627-Beta</version>
+    <title>Windows Management Framework and PowerShell 3.0 RC</title>
+    <version>3.0.20120823-Beta</version>
     <authors>Microsoft wrote PowerShell.  IntelliTect created the Chocolatey Package</authors>
     <owners>IntelliTect Corporation: Mark Michaelis, Kelly Adams, Zach Moore, Phil Spokas, Ian Davis</owners>
     <summary>Installs Windows Management Framework and Windows PowerShell 3.0</summary>
@@ -17,7 +17,7 @@
     <!--<dependencies>
       <dependency id="" version="" />
     </dependencies>-->
-    <releaseNotes></releaseNotes>
+    <releaseNotes>
+    </releaseNotes>
   </metadata>
 </package>
-
