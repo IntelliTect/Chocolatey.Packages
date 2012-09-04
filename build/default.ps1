@@ -20,7 +20,7 @@ task SetParams {
     Assert($nuspecFiles.Count -eq 1) "There is more than one nuspec file in the package directory: @{$nuspecFiles}"
     $script:nuspecFile = $nuspecFiles[0].FullName
     [xml]$script:nuspec=(type $script:nuspecFile)
-    $script:outputFileName=("{0}.{1}.nupkg" -f $nuspec.package.metadata.id, $nuspec.package.metadata.version)
+    $script:outputFileName=("{0}.{1}.nupkg" -f $script:nuspec.package.metadata.id, $script:nuspec.package.metadata.version)
     $script:outputDirectoryPath="$scriptPath\..\bin"
     if(!(test-path $script:outputDirectoryPath)) { new-item -itemtype directory -path $script:outputDirectoryPath }
     $script:outputFilePath=$(join-path $script:outputDirectoryPath $script:outputFileName)
@@ -36,6 +36,10 @@ task Build {
     #TODO: Create Output Directory Property.
     #TODO: Determine a means to avoid script scope if possible?
     NuGet Pack $script:nuspecFile -OutputDirectory $script:outputDirectoryPath -BasePath $script:packageDirectoryPath -Exclude **\*.swp`;**\*.*~
+}
+
+task Test -depends SetParams {
+    cinst $script:nuspec.package.metadata.id -pre -source $script:outputDirectoryPath -force
 }
 
 task ViewPackage -depends SetParams {
