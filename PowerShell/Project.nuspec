@@ -3,8 +3,8 @@
   <metadata>
     <id>PowerShell</id>
     <title>Windows Management Framework and PowerShell 3.0</title>
-    <version>3.0.20120904</version>
-    <authors>Microsoft wrote PowerShell.  IntelliTect created the Chocolatey Package</authors>
+    <version>3.0.20120905</version>
+    <authors>Microsoft wrote PowerShell,  IntelliTect created the Chocolatey Package</authors>
     <owners>IntelliTect Corporation: Mark Michaelis, Kelly Adams, Zach Moore, Phil Spokas, Ian Davis</owners>
     <summary>Installs Windows Management Framework and Windows PowerShell 3.0</summary>
     <description>Windows Management Framework 3.0 makes some updated management functionality available to be installed on Windows 7 SP1, Windows Server 2008 R2 SP1 &amp; Windows Server 2008 SP2. Windows Management Framework 3.0 contains Windows PowerShell 3.0, WMI &amp; WinRM. </description>
@@ -17,6 +17,9 @@
     <!--<dependencies>
       <dependency id="" version="" />
     </dependencies>-->
-    <releaseNotes>Updated to RTM</releaseNotes>
+    <releaseNotes>
+            Fixed minor bug for users that previously installed throug chocolatey.
+	    Updated to RTM
+    </releaseNotes>
   </metadata>
 </package>

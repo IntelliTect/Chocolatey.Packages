@@ -10,7 +10,7 @@ try
 
 
   $chocTempDir = Join-Path $env:TEMP "chocolatey"
-  $tempDir = Join-Path $chocTempDir "$packageName"
+  $tempDir = Join-Path $chocTempDir "$packageName(RTM)"
   if (![System.IO.Directory]::Exists($tempDir)) 
   {
       [System.IO.Directory]::CreateDirectory($tempDir)
