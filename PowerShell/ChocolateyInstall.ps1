@@ -8,10 +8,16 @@ try
   [string[]] $validExitCodes = @(0, 3010) # 2359302 occurs if the package is already installed.
   [string] $wusaExe="wusa.exe"
 
+  if ($PSVersionTable -and ($PSVersionTable.PSVersion -ge [Version]'3.0'))
+  {
+    Write-ChocolateySuccess "$packageName already installed on your OS"
+    return
+  }
+
   $osVersion = [Environment]::OSVersion.Version
   if ($osVersion -lt [Version]'6.0')
   {
-    Write-ChocolateyFailure $packageName 'Powershell 3 not supported on your OS'
+    Write-ChocolateyFailure $packageName "$packageName not supported on your OS"
     return
   }
   elseif ($osVersion -lt [Version]'6.1')
