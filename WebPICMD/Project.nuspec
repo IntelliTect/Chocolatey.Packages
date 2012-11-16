@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Everything</id>
+    <title>Everything</title>
+    <version>1.2.1371.20121101</version>
+    <authors>David Carpenter wrote Everything,  IntelliTect created the Chocolatey Package</authors>
+    <owners>Mark Michaelis</owners>
+    <summary>Installes Everything Seach Tool which locates files and folders by name instantly.</summary>
+    <description>&quot;Everything&quot; is an administrative tool that locates files and folders by filename instantly for Windows.
+Unlike Windows search &quot;Everything&quot; initially displays every file and folder on your computer (hence the name &quot;Everything&quot;).
+You type in a search filter to limit what files and folders are displayed.</description>
+    <projectUrl>http://www.voidtools.com/</projectUrl>
+    <tags>File Search</tags>
+    <copyright>Copyright © 2005-2010 David Carpenter</copyright>
+    <licenseUrl>http://www.voidtools.com</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>http://www.voidtools.com/ei.png</iconUrl>
+    <!--<dependencies>
+      <dependency id="" version="" />
+    </dependencies>-->
+    <releaseNotes>
+    </releaseNotes>
+  </metadata>
+</package>

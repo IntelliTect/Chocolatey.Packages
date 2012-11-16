@@ -35,7 +35,9 @@ task Build {
     #TODO: Boostrap NuGet
     #TODO: Create Output Directory Property.
     #TODO: Determine a means to avoid script scope if possible?
-    NuGet Pack $script:nuspecFile -OutputDirectory $script:outputDirectoryPath -BasePath $script:packageDirectoryPath -Exclude **\*.swp`;**\*.*~
+    $nuget = (get-command Nuget -erroraction silentlycontinue)
+    if($nuget -eq $null) {$nuget = get-command (join-path $env:chocolateyinstall "chocolateyInstall\NuGet.exe")}
+    . $NuGet Pack $script:nuspecFile -OutputDirectory $script:outputDirectoryPath -BasePath $script:packageDirectoryPath -Exclude **\*.swp`;**\*.*~
 }
 
 task Test -depends SetParams {

@@ -1,0 +1,1 @@
+Install-ChocolateyPackage 'Everything' 'exe' '/S' 'http://www.voidtools.com/Everything-1.2.1.371.exe' 
