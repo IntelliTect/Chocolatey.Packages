@@ -3,7 +3,7 @@
   <metadata>
     <id>PowerShell</id>
     <title>Windows Management Framework and PowerShell 3.0</title>
-    <version>3.0.20121027</version>
+    <version>3.0.20130514</version>
     <authors>Microsoft wrote PowerShell,  IntelliTect created the Chocolatey Package</authors>
     <owners>Mark Michaelis</owners>
     <summary>Installs Windows Management Framework and Windows PowerShell 3.0</summary>
