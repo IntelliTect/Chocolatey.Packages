@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>HighTailExpress</id>
+    <title>HighTail Express</title>
+    <version>2.14.1.20121122</version>
+    <authors>HighTail (Hightail.com) wrote HighTail Express,  IntelliTect created the Chocolatey Package</authors>
+    <owners>Mark Michaelis</owners>
+    <summary>Send and receive large files from your desktop in a snap using the HighTail service.</summary>
+    <description>HighTail Express gives one-click access to all the features of your account – no need to open a browser. Stop waiting around for your files to send. With Express, you’ll get access to faster upload speeds. If you like to split your work into nicely organized files, HighTail has your back. Easily send an entire folder from your computer. Just drag and drop files and folders into Express to send them without a worry in the world.</description>
+    <projectUrl>https://www.hightail.com/applications</projectUrl>
+    <tags>File Send</tags>
+    <copyright>Copyright © 2012 HighTail</copyright>
+    <licenseUrl>http://www.HighTail.com/aboutus/legal/terms-of-service</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://dj4wkwqu9ihdk.cloudfront.net/images/global/hightop-black.png</iconUrl>
+    <!--<dependencies>
+      <dependency id="" version="" />
+    </dependencies>-->
+    <releaseNotes>
+    </releaseNotes>
+  </metadata>
+</package>
