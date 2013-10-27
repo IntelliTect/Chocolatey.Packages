@@ -3,13 +3,14 @@
   <metadata>
     <id>Everything</id>
     <title>Everything</title>
-    <version>1.2.1371.20121117</version>
+    <version>1.2.1371.20121124</version>
     <authors>David Carpenter wrote Everything,  IntelliTect created the Chocolatey Package</authors>
     <owners>Mark Michaelis</owners>
     <summary>Installes Everything Seach Tool which locates files and folders by name instantly.</summary>
     <description>&quot;Everything&quot; is an administrative tool that locates files and folders by filename instantly for Windows.
 Unlike Windows search &quot;Everything&quot; initially displays every file and folder on your computer (hence the name &quot;Everything&quot;).
-You type in a search filter to limit what files and folders are displayed.</description>
+You type in a search filter to limit what files and folders are displayed. 
+Note: On 2013.10.27 I noticed the voidtools website was down.  There is an alternate downlaod at http://web.archive.org/web/20131009104736/http://www.voidtools.com/Everything-1.2.1.371.exe if needed.</description>
     <projectUrl>http://www.voidtools.com/</projectUrl>
     <tags>File Search</tags>
     <copyright>Copyright © 2005-2010 David Carpenter</copyright>

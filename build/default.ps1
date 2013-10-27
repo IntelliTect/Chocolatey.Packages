@@ -1,12 +1,10 @@
 properties {
     [Parameter(Mandatory=1)]
-    $packageDirectoryName
+    $package
 }
+task default -depends SetParams,Build,Test
 
-
-task default -depends SetParams,Build
-
-[string]$scriptPath=split-path $myInvocation.MyCommand.Definition
+[string]$here=split-path $myInvocation.MyCommand.Definition
 [string]$packageDirectoryPath = $null
 [string]$nuspecFile= $null
 [string]$outputFileName
@@ -14,14 +12,14 @@ task default -depends SetParams,Build
 [string]$outputFilePath=$null
 
 task SetParams { 
-	Assert ($packageDirectoryName -ne $null) "`$packageDirectoryName should not be null. Run with -parameters @{'packageDirectoryName' = 'PowerShell';} for example."
-    $script:packageDirectoryPath="$scriptPath\..\$packageDirectoryName"
+	Assert ($package -ne $null) "`$package should not be null. Run with -parameters @{'package' = 'PowerShell';} for example."
+    $script:packageDirectoryPath="$here\..\$package"
     $nuspecFiles=@(Get-ChildItem $script:packageDirectoryPath -recurse -include *.nuspec -Exclude .\tools)
     Assert($nuspecFiles.Count -eq 1) "There is more than one nuspec file in the package directory: @{$nuspecFiles}"
     $script:nuspecFile = $nuspecFiles[0].FullName
     [xml]$script:nuspec=(type $script:nuspecFile)
     $script:outputFileName=("{0}.{1}.nupkg" -f $script:nuspec.package.metadata.id, $script:nuspec.package.metadata.version)
-    $script:outputDirectoryPath="$scriptPath\..\bin"
+    $script:outputDirectoryPath="$here\..\bin"
     if(!(test-path $script:outputDirectoryPath)) { new-item -itemtype directory -path $script:outputDirectoryPath }
     $script:outputFilePath=$(join-path $script:outputDirectoryPath $script:outputFileName)
 }
@@ -31,7 +29,7 @@ task Clean {
     Remove-Item $script:outputFilePath
 }
 
-task Build { 
+task Build -depends SetParams { 
     #TODO: Boostrap NuGet
     #TODO: Create Output Directory Property.
     #TODO: Determine a means to avoid script scope if possible?
@@ -41,7 +39,7 @@ task Build {
 }
 
 task Test -depends SetParams {
-    cinst $script:nuspec.package.metadata.id -pre -source $script:outputDirectoryPath -force
+    Invoke-Pester "$here\..\" $package
 }
 
 task ViewPackage -depends SetParams {

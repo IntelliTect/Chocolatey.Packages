@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>YouSendIt</id>
+    <title>YouSentIt Express</title>
+    <version>2.12.0.20121122</version>
+    <authors>YouSendIT wrote YouSendIt Expres,  IntelliTect created the Chocolatey Package</authors>
+    <owners>Mark Michaelis</owners>
+    <summary>Send and receive large files from your desktop in a snap using the YouSendIt service.</summary>
+    <description>YouSendIt Express gives one-click access to all the features of your account – no need to open a browser. Stop waiting around for your files to send. With Express, you’ll get access to faster upload speeds. If you like to split your work into nicely organized files, YouSendIt has your back. Easily send an entire folder from your computer. Just drag and drop files and folders into Express to send them without a worry in the world.</description>
+    <projectUrl>http://www.yousendit.com/express-application</projectUrl>
+    <tags>File Send</tags>
+    <copyright>Copyright © 2012 YouSendIt</copyright>
+    <licenseUrl>http://www.yousendit.com/aboutus/legal/terms-of-service</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>http://www.yousendit.com/en_US/theme_default/images/g_logo_trans_110x63.gif</iconUrl>
+    <!--<dependencies>
+      <dependency id="" version="" />
+    </dependencies>-->
+    <releaseNotes>
+    </releaseNotes>
+  </metadata>
+</package>
