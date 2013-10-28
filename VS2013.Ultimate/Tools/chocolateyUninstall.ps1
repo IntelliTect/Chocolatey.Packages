@@ -1,0 +1,1 @@
+(Get-WmiObject -Class Win32_Product -Filter "Name = 'Microsoft Visual Studio Ultimate 2013'").Uninstall();

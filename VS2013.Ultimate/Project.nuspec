@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>VisualStudio2013Ultimate</id>
+    <version>12.021005.1</version>
+    <title>Microsoft Visual Studio Ultimate 2013 - English</title>
+    <authors>Microsoft wrote Visual Studio.  (IntelliTect created the Chocolatey Package)</authors>
+    <owners>IntelliTect Corporation</owners>
+    <licenseUrl>http://msdn.microsoft.com/en-US/cc300389.aspx</licenseUrl>
+    <summary>
+        Installs Microsoft Visual Studio Ultimate 2013 - English. 
+        Visual Studio Ultimate 2013 is the comprehensive ALM offering for organizations 
+        developing and operating highly scalable software applications and services.
+    </summary>
+    <projectUrl>http://www.microsoft.com/visualstudio/eng/downloads#d-ultimate</projectUrl>
+    <description>
+        This silently installs the 90 day trial (http://msdn.microsoft.com/en-us/library/gg442061.aspx) of 
+        Visual Studio Ultimate along with the Microsoft .Net 4.5 Framework SDK. All Optional Features such 
+        as Blend, Sql Dev tools, Web dev tools, etc. are not installed. However, from the "Programs and Features" 
+        menu in Windows you can right click Microsoft Visual Studio Ultimate and choose "Change" and then add the 
+        features you want. This may take quite a while to install so grab your Star Trek attire and re-enact your 
+        favorite episode while you wait.
+    </description>
+    <tags>Microsoft Visual Studio 2013 Ultimate IDE ALM admin .NET</tags>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>http://i.microsoft.com/visualstudio/11/images/visual_studio_logo.png</iconUrl>
+    <!--<dependencies>
+      <dependency id="" version="" />
+    </dependencies>-->
+    <releaseNotes>
+    </releaseNotes>
+  </metadata>
+</package>
