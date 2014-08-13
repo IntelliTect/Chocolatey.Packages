@@ -14,7 +14,7 @@ Note: On 2013.10.27 I noticed the voidtools website was down. There is an altern
     <projectUrl>http://www.voidtools.com</projectUrl>
     <tags>File Search</tags>
     <copyright>2014 David Carpenter</copyright>
-    <licenseUrl>http://www.voidtools.com</licenseUrl>
+    <licenseUrl>http://www.voidtools.com/License.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>http://www.voidtools.com/ei.png</iconUrl>
     <!--<dependencies>
