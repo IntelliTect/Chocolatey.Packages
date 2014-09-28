@@ -10,10 +10,19 @@ task default -depends SetParams,Build,Test
 [string]$outputFileName
 [string]$outputDirectoryPath=$null
 [string]$outputFilePath=$null
+[string]$packageVersion=$null
 
 task SetParams { 
 	Assert ($package -ne $null) "`$package should not be null. Run with -parameters @{'package' = 'PowerShell';} for example."
     $script:packageDirectoryPath="$here\..\$package"
+    if($packageVersion) { 
+        if($packageVersion -notmatch "v\d\.\d") {
+            throw "`$packageVersion is invalid.  It must match a format such as v4.0."
+        } 
+        else {
+            $script:packageDirectoryPath = (Join-Path $script:packageDirectoryPath $packageVersion)
+        }
+    }
     $nuspecFiles=@(Get-ChildItem $script:packageDirectoryPath -recurse -include *.nuspec -Exclude .\tools)
     Assert($nuspecFiles.Count -eq 1) "There is more than one nuspec file in the package directory: @{$nuspecFiles}"
     $script:nuspecFile = $nuspecFiles[0].FullName
