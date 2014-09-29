@@ -6,7 +6,7 @@
     <version>4.0.20140915</version>
     <authors>Microsoft wrote PowerShell, IntelliTect created the Chocolatey Package</authors>
     <owners>Mark Michaelis</owners>
-    <summary>Installs latest (3.0 or 4.0) Windows Management Framework and Windows PowerShell based on Operating System</summary>
+    <summary>Installs Windows Management Framework 4.0 and Windows PowerShell 4.0 (or possibly 3.0 if 'legacy' OS.)</summary>
     <description>
         Windows Management Framework includes updates to Windows PowerShell, Windows PowerShell ISE, Windows PowerShell Web Services (Management OData IIS Extension), Windows Remote Management (WinRM), Windows Management Instrumentation (WMI), the Server Manager WMI provider, and a new feature for 4.0, Windows PowerShell Desired State Configuration (DSC).
 

@@ -18,7 +18,7 @@ Windows PowerShell 3.0 runs on the following versions of Windows.
 
 try
 {
-  [string]$packageName="PowerShell 4.0"
+  [string]$packageName="PowerShell.4.0"
   [string]$installerType="msu"
   [string]$silentArgs="/quiet /norestart /log:`"$env:TEMP\PowerShell.v4.Install.log`""
   [string]$url   = 'http://download.microsoft.com/download/3/D/6/3D61D262-8549-4769-A660-230B67E15B25/Windows6.1-KB2819745-x86-MultiPkg.msu' 
