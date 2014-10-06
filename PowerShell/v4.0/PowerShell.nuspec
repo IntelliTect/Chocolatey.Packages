@@ -26,11 +26,11 @@
       <!-- <dependency id="DotNet4.5" version="4.5.20120822" /> -->
     </dependencies>
     <releaseNotes>
-            2014.10.01: 
-                Changed to report success when PowerShell 4.0 is already installed.
+2014.10.01: 
+    Changed to report success when PowerShell 4.0 is already installed.
 
-            2014.09.15: 
-                Support added for PowerShell 4.0
+2014.09.15: 
+    Support added for PowerShell 4.0
     </releaseNotes>
   </metadata>
 </package>
