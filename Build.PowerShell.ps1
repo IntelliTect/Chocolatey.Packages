@@ -1,14 +1,10 @@
 param(
-    $taskList,
-    $parameters,
-    $packageVersion
+    $packageVersion = "v4.0"
 )
 
-if(!$packageVersion) { $packageVersion = "v4.0" }
-if($parameters -eq $null) { $parameters = @{
-    'package' = 'PowerShell'
-    'packageVersion' = $packageVersion
-    } 
-}
+. $PSScriptRoot\build.ps1
 
-. "$(split-path $myInvocation.MyCommand.Definition)\build.ps1" -taskList $taskList -parameters $parameters
+$packageName = "PowerShell"
+
+Create-ChocolateyPackage "$PSScriptRoot\$packageName\$packageVersion"
+

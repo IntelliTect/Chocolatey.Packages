@@ -1,7 +1,10 @@
 param(
-    $taskList,
-    $parameters
+    $packageVersion = "v2.14"
 )
-if($parameters -eq $null) { $parameters = @{'package' = 'HightailExpress'} }
 
-. "$(split-path $myInvocation.MyCommand.Definition)\build.ps1" -taskList $taskList -parameters $parameters
+. $PSScriptRoot\build.ps1
+
+$packageName = "HightailExpress"
+
+Create-ChocolateyPackage "$PSScriptRoot\$packageName\$packageVersion"
+

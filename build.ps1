@@ -1,4 +1,5 @@
-﻿param(
+﻿<#
+param(
   [Parameter(Position=0,Mandatory=0)]
   [string]$buildFile, #"$(Split-Path -parent $MyInvocation.MyCommand.Definition)\build\build.ps1",
   [Parameter(Position=1,Mandatory=0)]
@@ -12,6 +13,8 @@
   [Parameter(Position=5, Mandatory=0)]
   [System.Collections.Hashtable]$properties = @{}
 )
+
+
 Write-Debug ("Starting " + $MyInvocation.MyCommand.Definition)
 $here = (Split-Path -parent $MyInvocation.MyCommand.Definition)
 $buildPath = (Resolve-Path $here\build)
@@ -27,4 +30,14 @@ if($env:BUILD_NUMBER) {
   [Environment]::Exit($lastexitcode)
 } else {
   exit $lastexitcode
+}
+#>
+
+Function Create-ChocolateyPackage {
+    [CmdletBinding()] param(
+        [Parameter(Mandatory)][string]$nuspecFilePath
+    )
+
+    $nuspecFilePath=Resolve-Path $nuspecFilePath
+    cpack.exe $nuspecFilePath -OutDirectory "$PSScriptRoot\bin"
 }
