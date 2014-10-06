@@ -3,7 +3,7 @@
   <metadata>
     <id>PowerShell</id>
     <title>Windows Management Framework and PowerShell</title>
-    <version>4.0.20140915</version>
+    <version>4.0.20141001</version>
     <authors>Microsoft wrote PowerShell, IntelliTect created the Chocolatey Package</authors>
     <owners>Mark Michaelis</owners>
     <summary>Installs Windows Management Framework 4.0 and Windows PowerShell 4.0 (or possibly 3.0 if 'legacy' OS.)</summary>
@@ -26,7 +26,11 @@
       <!-- <dependency id="DotNet4.5" version="4.5.20120822" /> -->
     </dependencies>
     <releaseNotes>
-            Support added for PowerShell 4.0
+            2014.10.01: 
+                Changed to report success when PowerShell 4.0 is already installed.
+
+            2014.09.15: 
+                Support added for PowerShell 4.0
     </releaseNotes>
   </metadata>
 </package>

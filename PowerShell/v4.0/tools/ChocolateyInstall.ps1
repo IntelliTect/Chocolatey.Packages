@@ -28,7 +28,7 @@ try
 
   if ($PSVersionTable -and ($PSVersionTable.PSVersion -ge [Version]'4.0'))
   {
-    throw "$packageName or newer is already installed"
+    Write-Warning "$packageName or newer is already installed"
   }
     else {
         $osversionLookup = @{
