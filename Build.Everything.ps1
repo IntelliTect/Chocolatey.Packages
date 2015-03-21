@@ -4,7 +4,9 @@ param(
 
 . $PSScriptRoot\build.ps1
 
-$packageName = "Everyting"
+$packageName = "Everything"
 
-Create-ChocolateyPackage "$PSScriptRoot\$packageName\$packageVersion"
+#Write-Host "NuspecPath =`'$PSScriptRoot\$packageName\$packageVersion\Project.nuspec`'($(Test-Path $PSScriptRoot\$packageName\$packageVersion\Project.nuspec))"
+
+Create-ChocolateyPackage (Resolve-Path "$PSScriptRoot\$packageName\$packageVersion\Project.nuspec")
 

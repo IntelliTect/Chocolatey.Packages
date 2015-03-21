@@ -35,9 +35,15 @@ if($env:BUILD_NUMBER) {
 
 Function Create-ChocolateyPackage {
     [CmdletBinding()] param(
-        [Parameter(Mandatory)][string]$nuspecFilePath
+        [ValidateScript({Test-Path $_ -PathType Leaf})][Parameter(Mandatory)][string]$nuspecFilePath
     )
 
-    $nuspecFilePath=Resolve-Path $nuspecFilePath
-    cpack.exe $nuspecFilePath -OutDirectory "$PSScriptRoot\bin"
+    Choco Pack $nuspecFilePath | %{ ` # -OutputDirectory doesn't appear to work, file is instead output to current directory. 
+        if($_ -match "Successfully created package '(?'NugetFile'.*)'") {
+            Write-Output $Matches.NugetFile
+        }
+    } | %{
+        Move-Item $_ "$PSScriptRoot\bin\"  -Force  # Overwrite the file if it already exists
+        Get-Item (Join-Path "$PSScriptRoot\bin\"  (Split-Path $_ -Leaf))  #Write the resulting nuget file to the output stream.
+    }
 }
