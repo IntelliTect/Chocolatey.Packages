@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>amazonclouddrive</id>
+    <title>AmazonCloudDrive (Install)</title>
+    <version>2.3.25.20150326</version>
+    <authors>Amazon Wrote Amazon Cloud Drive.  IntelliTect created the Chocolatey Package</authors>
+    <owners></owners>
+    <summary>__REPLACE__</summary>
+    <description>
+    Amazon Cloud Drive is your place for everything digital. Cloud Drive offers free mobile apps, secure access from any computer, and it's built in to your Amazon devices—so you can access your digital content everywhere you are. 
+    </description>
+    <projectUrl>https://www.amazon.com/gp/drive/app-download</projectUrl>
+    <tags>amazonclouddrive admin</tags>
+    <copyright>2012-2015 Amazon Corporation</copyright>
+    <licenseUrl>http://www.amazon.com/gp/help/customer/display.html?nodeId=201376540&pop-up=1</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!--<iconUrl>https://images-na.ssl-images-amazon.com/images/G/01/digital/adrive/photos/amzncd_logoSm.png</iconUrl>-->
+    <!--<dependencies>
+      <dependency id="" version="__VERSION__" />
+      <dependency id="" />
+    </dependencies>-->
+    <releaseNotes></releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
