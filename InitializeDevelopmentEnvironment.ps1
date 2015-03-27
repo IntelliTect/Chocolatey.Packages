@@ -1,4 +1,4 @@
-Set-StrictMode -version 3
+Set-StrictMode -version latest
 
 $here=(split-path $myInvocation.MyCommand.Definition)
 $utilProfile=$myInvocation.MyCommand.Definition

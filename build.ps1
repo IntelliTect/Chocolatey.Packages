@@ -43,7 +43,9 @@ Function Create-ChocolateyPackage {
             Write-Output $Matches.NugetFile
         }
     } | %{
-        Move-Item $_ "$PSScriptRoot\bin\"  -Force  # Overwrite the file if it already exists
+        Get-ChildItem (Split-Path $nuspecFilePath) $_ -Recurse
+    } | %{
+        Move-Item $_.FullName "$PSScriptRoot\bin\"  -Force  # Overwrite the file if it already exists
         Get-Item (Join-Path "$PSScriptRoot\bin\"  (Split-Path $_ -Leaf))  #Write the resulting nuget file to the output stream.
     }
 }
