@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>GooglePhotos</id>
+    <title>Google Photos Backup (Install)</title>
+    <version>1.1.0.20150530</version>
+    <authors>Google Corporation wrote Everything, IntelliTect created the Chocolatey Package</authors>
+    <owners>Mark Michaelis</owners>
+    <summary>Install package for Google Photos</summary>
+    <description>Auto upload photos from your Windows computer to Google Photo 
+    </description>
+    <projectUrl>https://photos.google.com/apps</projectUrl>
+    <tags>Google Photos</tags>
+    <copyright>Google Corporation</copyright>
+    <licenseUrl>https://www.google.com/policies/terms/</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://ssl.gstatic.com/social/photosui/images/logo_photos_color_96px.svg</iconUrl>
+    <!--<dependencies>
+      <dependency id="" version="__VERSION__" />
+      <dependency id="" />
+    </dependencies>-->
+    <releaseNotes></releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
