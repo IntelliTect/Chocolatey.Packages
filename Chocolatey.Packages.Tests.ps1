@@ -35,3 +35,31 @@ Describe "HighTailExpress" {
 
     }
 }
+
+
+# Started but never tested and it isn't complete.  
+Function Test-ChocolateyPackage {
+    [CmdletBinding(DefaultParameterSetName="Package")]
+    param(
+        [ValidateScript({Test-Path $_ -PathType Leaf})][Parameter(Mandatory,ParameterSetName="nupkg")][Alias("PackageName")][string]$nupkgFilePath,
+        [ValidateScript({$_ -in (Get-ChildItem $PSScriptRoot -Exclude bin,build,.git -Directory)})][Parameter(Mandatory,ParameterSetName="Package")][string]$Package,
+        [Parameter(ParameterSetName="Package")][string]$Version
+    )
+
+    if($PSCmdlet.ParameterSetName -eq "Package") {
+        $packagePath = (Join-Path $PSScriptRoot "bin")
+        $nupkgFilePaths = @(Get-ChildItem $packagePath "$Package." | ?{
+            if($Version) {
+                $_ -like "*.$version.nupkg"
+            }
+            else {
+                $true
+            }
+        })
+        if($nupkgFilePaths.Count -ne 1) {
+            throw "No package found in '$packagePath' with name '$Package.$Version.nupkg'.".Replace("..",".")
+        }
+        $nupkgFilePath = $nupkgFilePaths[-1]
+
+    }
+}
