@@ -9,7 +9,7 @@
 $ErrorActionPreference = 'Stop'; # stop on all errors
 
 $packageName = 'DotNetVersionManager'
-$softwareName = 'DotNetVersionManager*' #part or all of the Display Name as you see it in Programs and Features. It should be enough to be unique
+$softwareName = 'Microsoft .NET Version Manager' #part or all of the Display Name as you see it in Programs and Features. It should be enough to be unique
 $installerType = 'MSI' 
 
 $silentArgs = '/qn /norestart'
@@ -22,9 +22,9 @@ $machine_key6432 = 'HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\
 
 $key = Get-ItemProperty -Path @($machine_key6432,$machine_key, $local_key) `
                         -ErrorAction SilentlyContinue `
-         | ? { $_.DisplayName -like "$softwareName" }
+         | ? { [bool]($_.PSobject.Properties.name -match "DisplayName") -and $_.DisplayName -like "$softwareName*" }
 
-if ($key.Count -eq 1) {
+if (@($key).Count -eq 1) {
   $key | % { 
     $file = "$($_.UninstallString)"
 

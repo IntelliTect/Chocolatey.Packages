@@ -27,5 +27,7 @@ $packageArgs = @{
 
 Install-ChocolateyPackage @packageArgs
 
-Remove-Item ~\.dnx\bin -force -ErrorAction Ignore
+if(Test-Path "~\.dns\bin") {
+    Remove-Item "~\.dnx\bin" -force -Recurse -ErrorAction Ignore
+}
 & "$env:ProgramFiles\Microsoft DNX\Dnvm\dnvm.cmd" setup
