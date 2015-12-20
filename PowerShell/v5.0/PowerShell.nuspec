@@ -2,12 +2,12 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
   <metadata>
     <id>PowerShell</id>
-    <version>5.0.10514-ProductionPreview</version>
+    <version>5.0.10586.20151218</version>
     <title>Windows Management Framework and PowerShell</title>
     <authors>Microsoft wrote PowerShell, IntelliTect created the Chocolatey Package</authors>
     <owners>Mark Michaelis, Darwin Sanoy (CSI-Windows.com)</owners>
     <licenseUrl>https://gist.github.com/gists/2841427/download</licenseUrl>
-    <projectUrl>http://blogs.msdn.com/b/powershell/archive/2015/08/31/windows-management-framework-5-0-production-preview-is-now-available.aspx</projectUrl>
+    <projectUrl>http://blogs.msdn.com/b/powershell/archive/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available.aspx</projectUrl>
     <iconUrl>http://www.rssbus.com/ui/img/logo-powershell.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Windows Management Framework 5.0 includes updates to Windows PowerShell, Windows PowerShell ISE, Windows PowerShell Web Services (Management OData IIS Extension), Windows Remote Management (WinRM), Windows Management Instrumentation (WMI), the Server Manager WMI provider, and a new feature for 4.0, Windows PowerShell Desired State Configuration (DSC).
@@ -30,8 +30,11 @@
             Windows Vista or Windows 2008: PowerShell 3.0 install attempted
 			WARNING: DO NOT INSTALL ON SCCM SERVERS.
 			Tested On: Windows 7, Windows 8.1, Windows 2008 R2, Windows 2012, Windows 2012 R2, Windows 10</description>
-    <summary>Installs Windows Management Framework 5.0 Preview April 2015 or Windows Management Framework 4.0 and Windows PowerShell 4.0 (or possibly 3.0 if 'legacy' OS.)</summary>
-    <releaseNotes>2015.09.02: 
+    <summary>Installs Windows Management Framework (with PowerShell) 5.0, Windows Management Framework 4.0 (with PowerShell) 4.0 or PowerShell 3.0 (if 'legacy' OS.)</summary>
+    <releaseNotes>2015.12.19:
+                Updated for PowerShell 5.0.10586.20151218 RTM - Released 2015-12-18.
+
+                2015.09.02:
                 Updated for PowerShell 5.0.10514.6 (Production Preview) Released 8/31/15 (Darwin).
 				Checks if you already have 5.0 installed and requires previous versions of 5 to be uninstalled first.
 
