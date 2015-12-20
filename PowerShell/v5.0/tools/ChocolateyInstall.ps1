@@ -36,14 +36,15 @@ try
     [string]$urlWin2012 =                    'https://download.microsoft.com/download/2/C/6/2C6E1B4A-EBE5-48A6-B225-2D2058A9CEFB/W2K12-KB3094175-x64.msu'
   
     [string[]] $validExitCodes = @(0, 3010) # 2359302 occurs if the package is already installed.
- 
+
     if ($PSVersionTable -and ($PSVersionTable.PSVersion -ge [Version]$ThisPackagePSHVersion)) {
-	    Write-Warning "Installed PowerShell $($PSVersionTable.PSVersion) is already the same or newer than this package installs."
+	    Write-Warning "Installed PowerShell version, $($PSVersionTable.PSVersion), is already the same or newer than this package install (version $ThisPackagePSHVersion)."
 	}
     elseif ($PSVersionTable -and ($PSVersionTable.PSVersion -ge [Version]'5.0') -and ($PSVersionTable.PSVersion -lt [Version]$ThisPackagePSHVersion)) {
-        Write-Warning "The existing PowerShell version $($PSVersionTable.PSVersion) must be uninstalled, before you can install version $ThisPackagePSHVersion."
+        Write-Warning "The existing PowerShell version, $($PSVersionTable.PSVersion), must be uninstalled, before you can install version $ThisPackagePSHVersion."
     } 
     else {
+
 	    # Get-CimInstance was completely crashing on win7 psh 2 even with try / catch
 	    $osVersion = (Get-WmiObject Win32_OperatingSystem).Version
 		$os = (Get-WmiObject "Win32_OperatingSystem")
