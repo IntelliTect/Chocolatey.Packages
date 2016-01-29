@@ -31,8 +31,8 @@ function Uninstall()
   {
     Write-Error "The application uninstall command failed."
   }
-  if(Test-Path "$env:ChocolateyInstall\bin\es.cmd") {
-    Remove-Item $env:ChocolateyInstall\bin\es.cmd #Remove the item added so es is in the path. 
+  if(Test-Path "$env:ChocolateyInstall\bin\es.exe") {
+    Remove-Item $env:ChocolateyInstall\bin\es.exe #Remove the item added so es is in the path. 
   }
 }
 

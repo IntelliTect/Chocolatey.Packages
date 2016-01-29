@@ -11,12 +11,4 @@ else {
 
 Start-Process "$everythingDir\Everything.exe" -ArgumentList "-startup"  # Removed becuase command doesn't return.
 
-((new-object net.webclient).DownloadFile("http://www.voidtools.com/es.exe", (Join-Path $everythingDir "es.exe")))
-
-#Create es.cmd file in the chocolatey bin directory which is in the path.
-@"
-    @echo off
-    "$everythingDir\es.exe" -n 1000 %*
-"@ | 
-    Out-File $env:ChocolateyInstall\bin\es.cmd -Encoding ascii
-
+Get-ChocolateyWebFile 'es' "$env:ChocolateyInstall\bin\es.exe" 'http://www.voidtools.com/es.exe'

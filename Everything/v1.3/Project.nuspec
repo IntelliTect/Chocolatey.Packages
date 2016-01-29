@@ -3,10 +3,10 @@
   <metadata>
     <id>Everything</id>
     <title>Everything</title>
-    <version>1.3.4686.20150529</version>
+    <version>1.3.4686.20160128</version>
     <authors>David Carpenter wrote Everything, IntelliTect created the Chocolatey Package</authors>
     <owners>Mark Michaelis</owners>
-    <summary>Installes Everything Seach Tool which locates files and folders by name instantly.</summary>
+    <summary>Installs Everything Search Tool which locates files and folders by name instantly.</summary>
     <description>&quot;Everything&quot; is an administrative tool that locates files and folders by filename instantly for Windows.
 Unlike Windows search &quot;Everything&quot; initially displays every file and folder on your computer (hence the name &quot;Everything&quot;).
 You type in a search filter to limit what files and folders are displayed. 
