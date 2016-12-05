@@ -6,7 +6,7 @@
     <title>Windows Management Framework and PowerShell</title>
     <authors>Microsoft wrote PowerShell, IntelliTect created the Chocolatey Package</authors>
     <owners>Mark Michaelis, Darwin Sanoy (CSI-Windows.com)</owners>
-    <licenseUrl>https://gist.github.com/gists/2841427/download</licenseUrl>
+    <licenseUrl>https://raw.githubusercontent.com/IntelliTect/Licenses/master/WindowsManagementFramework.txt</licenseUrl>
     <projectUrl>http://blogs.msdn.com/b/powershell/archive/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available.aspx</projectUrl>
     <iconUrl>http://www.rssbus.com/ui/img/logo-powershell.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

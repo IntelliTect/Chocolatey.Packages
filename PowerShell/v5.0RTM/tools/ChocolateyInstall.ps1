@@ -78,7 +78,9 @@ try
             $osVersion = (Get-WmiObject Win32_OperatingSystem).Version
         }
         #The following should not occur as PowerShell 5 is already installed
-        if( ([version]$osVersion).Major -eq "10" ) { $osVersion = "$(([version]$osVersion).Major).$(([version]$osVersion).Minor).*" }
+        if( ([version]$osVersion).Major -eq "10" ) { 
+            $osVersion = "$(([version]$osVersion).Major).$(([version]$osVersion).Minor).*" 
+        }
 	   
         Write-Verbose "Installing for OS: $($osversionLookup[$osVersion])"
 
