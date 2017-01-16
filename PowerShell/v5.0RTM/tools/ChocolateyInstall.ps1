@@ -113,7 +113,7 @@ try
                 Install-PowerShell5 -urlx86 "$urlWin7x86" -checksumx86 $urlWin7x86checksum -urlx64 "$urlWin2k8R2andWin7x64" -checksumx64 $urlWin2k8R2andWin7x64checksum
             }
             "Win8/2012" {
-                if($os.ProductType -eq 3) {
+                if($os.ProductType -gt 1) {
                     #Windows 2012
                     Install-PowerShell5 -urlx86 "$urlWin2012" -checksumx86 $urlWin2012checksum
                 }

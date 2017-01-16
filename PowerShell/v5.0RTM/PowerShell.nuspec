@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
   <metadata>
     <id>PowerShell</id>
-    <version>5.0.10586.20161216</version>
+    <version>5.0.10586.20170115</version>
     <title>Windows Management Framework and PowerShell</title>
     <authors>Microsoft wrote PowerShell, IntelliTect created the Chocolatey Package</authors>
     <owners>Mark Michaelis, Darwin Sanoy (CSI-Windows.com)</owners>
@@ -32,6 +32,9 @@
 			Tested On: Windows 7, Windows 8.1, Windows 2008 R2, Windows 2012, Windows 2012 R2, Windows 10</description>
     <summary>Installs Windows Management Framework (with PowerShell) 5.0, Windows Management Framework 4.0 (with PowerShell) 4.0 or PowerShell 3.0 (if 'legacy' OS.)</summary>
     <releaseNotes>
+
+      2016.12.01  (5.0.10586.20170115)
+        -  Fixed: Package generates error that you must upgrade to Windows 8.1 on Server 2012 (not-R2) domain controllers.
 
       2016.12.01  (5.0.10586.20161201)
         -  IMPORTANT: This package no longer updates a machine to an older version of PowerShell when 5 cannot be applied, the package must
