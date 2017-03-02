@@ -55,7 +55,7 @@ $osversionLookup = @{
 
 function Install-PowerShell5([string]$urlx86, [string]$urlx64 = $null, [string]$checksumx86 = $null,[string]$checksumx64 = $null) {
     $Net4Version = (get-itemproperty "hklm:software\microsoft\net framework setup\ndp\v4\full" -ea silentlycontinue | Select -Expand Release -ea silentlycontinue)
-    if ($Net4Version -ge 378675) {
+    if ($Net4Version -ge 378389) {
         Install-ChocolateyPackage "$packageName" "$installerType" "$silentArgs" -url $urlx86 -url64 $urlx64 -checksum $checksumx86 -ChecksumType $ChecksumType -checksum64 $checksumx64 -ChecksumType64 $ChecksumType -validExitCodes $validExitCodes
         Write-Warning "$packageName requires a reboot to complete the installation."
     }
@@ -64,13 +64,8 @@ function Install-PowerShell5([string]$urlx86, [string]$urlx64 = $null, [string]$
     }
 }
 
-try {
-  # Get-CimInstance was completely crashing on win7 psh 2 even with try / catch
-  $osVersion = (Get-WmiObject Win32_OperatingSystem).Version
-}
-catch {
-    $osVersion = (Get-WmiObject Win32_OperatingSystem).Version
-}
+$os = Get-WmiObject Win32_OperatingSystem
+$osVersion = $os.version
 
 $ProductName = (Get-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion' -Name 'ProductName').ProductName
 $EditionId = (Get-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion' -Name 'EditionID').EditionId
@@ -188,7 +183,7 @@ try
                 }
             }
             "Win8.1/2012R2" {
-              Install-PowerShell5 -urlx86 "$urlWin81x86" -checksumx86 $urlWin81x86checksum -urlx64 "$urlWin2k12R2andWin81x64" -checksumx64 $urlWin2k12R2andWin81x64checksum
+              Install-PowerShell5 -urlx86 "$urlWin81x86" -checksumx86 $urlWin81x86checksum -urlx64 "$urlWin2k12R2andWin81x64" -checksumx64 $urlWin2k12R2andWin81x64checksum -checksumtype "$ChecksumType" -checksumtype64 "$ChecksumType"
             }
             "Windows 10/Server 2016" {
                 #Should never be reached.

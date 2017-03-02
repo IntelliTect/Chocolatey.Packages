@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
   <metadata>
     <id>PowerShell</id>
-    <version>5.1.14409.1005</version>
+    <version>5.1.14409.20170301</version>
     <title>Windows Management Framework and PowerShell</title>
     <authors>Microsoft wrote PowerShell, IntelliTect created the Chocolatey Package</authors>
     <owners>Mark Michaelis, Darwin Sanoy (CSI-Windows.com)</owners>
@@ -37,13 +37,23 @@
 
       WMF 5.1 Release Notes: https://msdn.microsoft.com/en-us/powershell/wmf/5.1/release-notes
 
+     2017.02.14 
+       WMF Version: 5.1.14409.1005
+       Pkg Version: 5.1.14409.20170301
+       - fixed bug misidentifying the .net version on Server 2012
+
+     2017.02.14 
+       WMF Version: 5.1.14409.1005
+       Pkg Version: 5.1.14409.20170214
+       - fixed bug causing Server 2012 (non-R2) from being detected as windows 8
+
       2017.01.26  (5.1.14409.1005)
         -  New: Installs WMF 5.1
         -  Tested On: Win7 + PSH 2, Win7 + WMF 3, Win 8.1 + WMF 4, 2012 R2 + WMF 5.0, Windows 10
         -  EXPERIMENTAL: Attempts to Preserve the PSModulePath when WMF 5.1 is 
                          installed over WMF 3 on Windows 7 or Server 2008.
 
-             How it the experimental support works:
+             How the experimental support works:
                *) It only takes effect on Windows 7 and Server 2008 R2 and only if WMF 3 is installed
                *) You must pre-install at least .NET 4.5.1 (required by WMF 4 and later)
                *) You must use the -force switch on the package
@@ -91,7 +101,8 @@
         Changed to report success when PowerShell 4.0 is already installed.
 
       2014.09.15:
-        Support added for PowerShell 4.0</releaseNotes>
+        Support added for PowerShell 4.0
+    </releaseNotes>
     <copyright>2013 Microsoft Corporation</copyright>
     <tags>PowerShell admin Reboot Scripting OneGet</tags>
   </metadata>
