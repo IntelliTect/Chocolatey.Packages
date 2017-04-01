@@ -15,23 +15,15 @@
 
      Important Product Incompatibility Notes: https://msdn.microsoft.com/en-us/powershell/wmf/5.0/productincompat
 
-        IMPORTANT NOTES for your Operating System:
+      IMPORTANT NOTES for your Operating System:
 
-		    PowerShell 4 and later requires at least .NET 3.5.1.
+		  PowerShell 4 and later requires at least .NET 3.5.1.
 			This package will warn you and exit if it is not installed.
 			It is not automatically installed as a dependency so that you
 			maintain complete control over the .NET version in your build.
 
-            Windows 8.1, Windows 2012R2: Installs PowerShell 5.0.
-            Windows 8: PowerShell 4.0 not supported.  PowerShell 3.0 installed by default
-            Windows 7 SP1, Windows 2008 R2 SP1, or Windows 2012: PowerShell 5.0 installed (as of 5.0.10105 April 2015 Preview)
-			   ATTENTION: Windows 7 and Server 2008 R2 Required WMF/PowerShell 4.0 to be installed first.
-			     This package will install 4 if it is not installed and instruct you to re-run the package using -Force
-				 Or you can just install WMF 4 first if you have this already setup in build automation.
-				 This is a temporary restriction that Microsoft is working on removing for the final release.
-            Windows Vista or Windows 2008: Directs to PowerShell 3.0 install
-			WARNING: DO NOT INSTALL ON SCCM SERVERS.
-			Tested On: Windows 7, Windows 8.1, Windows 2008 R2, Windows 2012, Windows 2012 R2, Windows 10</description>
+			WARNING: Review the release notes to learn which software products are not compatible with this upgrade (e.g. SCCM SERVERS.)
+
     <summary>Installs Windows Management Framework (with PowerShell) 5.0, Windows Management Framework 4.0 (with PowerShell) 4.0 or PowerShell 3.0 (if 'legacy' OS.)</summary>
     <releaseNotes>
 
@@ -79,29 +71,16 @@
         -  Checks and errors if Windows Update service is disabled, the error message suggests enabling it just for the time this package runs
              (it is a common good practice to disable Windows Update when doing long running orchestration,
              however, it must be enabled for this package to run)
+    
+    TROUBLESHOOTING GUIDANCE:
+      If you receive the error 'ERROR: Running ["C:\Windows\System32\wusa.exe" ' it generally means the system does not have the prerequisites 
+      required by the .MSU file.  
+      
+      Find the reference to the the log file "PowerShell.Install.evtx" and double-click it to open it in eventvwr.  The reason for the failure
+      should be within the messages in this file.
 
-	    2016.3.28:
-				Fixed bug with Windows Server 2012 installation
+      Please do this before reporting the error because it will be the first thing you are asked to do in order to establish root cause. 
 
-			2015.12.19:
-        Updated for PowerShell 5.0.10586.20151218 RTM - Released 2015-12-18.
-
-      2015.09.02:
-        Updated for PowerShell 5.0.10514.6 (Production Preview) Released 8/31/15 (Darwin).
-				Checks if you already have 5.0 installed and requires previous versions of 5 to be uninstalled first.
-
-			2015.04.29:
-        Updated for PowerShell 5.0.10105 (April 2015 Preview) (Darwin).
-				Windows 7 SP1 and Server 2008 R2 SP1 NOW SUPPORTED FOR PSH 5!
-
-      2015.03.18:
-        Updated for PowerShell 5 (Darwin).
-
-			2014.10.01:
-        Changed to report success when PowerShell 4.0 is already installed.
-
-      2014.09.15:
-        Support added for PowerShell 4.0
     </releaseNotes>
     <copyright>2013 Microsoft Corporation</copyright>
     <tags>PowerShell admin Reboot Scripting OneGet</tags>
