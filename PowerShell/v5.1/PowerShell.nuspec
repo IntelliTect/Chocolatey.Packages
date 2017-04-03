@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
   <metadata>
     <id>PowerShell</id>
-    <version>5.1.14409.20170301</version>
+    <version>5.1.14409.20170402</version>
     <title>Windows Management Framework and PowerShell</title>
     <authors>Microsoft wrote PowerShell, IntelliTect created the Chocolatey Package</authors>
     <owners>Mark Michaelis, Darwin Sanoy (CSI-Windows.com)</owners>
@@ -23,13 +23,19 @@
 			maintain complete control over the .NET version in your build.
 
 			WARNING: Review the release notes to learn which software products are not compatible with this upgrade (e.g. SCCM SERVERS.)
-
+    </description>
     <summary>Installs Windows Management Framework (with PowerShell) 5.0, Windows Management Framework 4.0 (with PowerShell) 4.0 or PowerShell 3.0 (if 'legacy' OS.)</summary>
     <releaseNotes>
 
       WMF 5.1 Release Notes: https://msdn.microsoft.com/en-us/powershell/wmf/5.1/release-notes
 
-     2017.02.14 
+     2017.04.02 
+       WMF Version: 5.1.14409.1005
+       Pkg Version: 5.1.14409.20170402
+       - powershell install log files are serialized so that they don't accumulate in the same file across multiple attempts
+       - if an errors occurs, the errors are extracted from the log file and displayed into the chocolatey log
+
+     2017.03.01 
        WMF Version: 5.1.14409.1005
        Pkg Version: 5.1.14409.20170301
        - fixed bug misidentifying the .net version on Server 2012

@@ -24,8 +24,9 @@ Windows PowerShell 3.0 runs on the following versions of Windows.
 
 [string]$packageName="PowerShell"
 [string]$installerType="msu"
+[string]$installlogfilename = "$env:TEMP\PowerShell-Install-$(Get-date -format 'yyyyMMddhhmm').evtx"
 [string]$ThisPackagePSHVersion = '5.1.14409.1005'
-[string]$silentArgs="/quiet /norestart /log:`"$env:TEMP\PowerShell.Install.evtx`""
+[string]$silentArgs="/quiet /norestart /log:`"$installlogfilename`""
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
 [string]$urlWin81x86   =                 'https://download.microsoft.com/download/6/F/5/6F5FF66C-6775-42B0-86C4-47D41F2DA187/Win8.1-KB3191564-x86.msu'
@@ -60,7 +61,7 @@ function Install-PowerShell5([string]$urlx86, [string]$urlx64 = $null, [string]$
         Write-Warning "$packageName requires a reboot to complete the installation."
     }
     else {
-        throw ".NET Framework 4.5.1 or later required.  Use package named `"dotnet4.5.1`"."
+        throw ".NET Framework 4.5.2 or later required.  Use package named `"dotnet4.5`"."
     }
 }
 
@@ -106,7 +107,7 @@ try
                 $Net4Version = (get-itemproperty "hklm:software\microsoft\net framework setup\ndp\v4\full" -ea silentlycontinue | Select -Expand Release -ea silentlycontinue)
                 if ($Net4Version -lt 378758)
                 {
-                  throw ".NET Framework 4.5.1 or later required.  Use package named `"dotnet4.5.1`"."
+                  throw ".NET Framework 4.5.2 or later required.  Use package named `"dotnet4.5`"."
                 }
                 Else
                 {
@@ -146,7 +147,7 @@ try
                   $x64MSUName = "$toolsdir\$(($urlWin2k8R2andWin7x64.split('/') | select -last 1).replace('.zip','.msu'))"
                   $x86MSUName = "$toolsdir\$(($urlwin7x86.split('/') | select -last 1).replace('.zip','.msu'))"
                   Write-Host "64-bit file: $x64MSUName"
-                  Install-ChocolateyPackage "$packageName" 'MSU' "$SilentArgs" -url $x86MSUName -url64 $x64MSUName -validExitCodes $validExitCodes
+                      Install-ChocolateyPackage "$packageName" 'MSU' "$SilentArgs" -url $x86MSUName -url64 $x64MSUName -validExitCodes $validExitCodes
                   If ($WMF5Over3WasForced)
                   {
                     If (!$FilteredList)
@@ -197,5 +198,15 @@ try
     }
 }
 catch {
+  If (Test-Path "$installlogfilename")
+  {
+    Write-Host "Opps we had a error."
+    $logfileerrors = @(Get-WinEvent -Path "$installlogfilename" -oldest | where {($_.level -ge 2) -AND ($_.level -le 3)})
+    If ($logfileerrors.count -gt 0)
+    {
+      Write-Host "Found the following error(s) and warnings in the MSU log `"$installlogfilename`""
+      $logfileerrors | Format-List ID, Message | out-string | write-host
+    }
+  }
   Throw $_.Exception
 }
